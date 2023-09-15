@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <title>Guessing Game</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                text-align: center;
+                color:white;
+                background-color:black;
+
+            }
+            form{
+                margin-left:auto;
+                margin-right:auto;
+                text-align:center;
+            }
+        </style>
+        <script>
+            var theNumber = 0;
+            var message = "Hello";
+            var name = prompt("What is Your Name? ", "Tanner");
+            document.write("<h2>" + message + " " + name + " are you ready to play?</h2>");
+
+            function initialize()
+            {
+                thePictureNumber = 1;
+                theNumber = Math.random();
+                theNumber = theNumber * 100;
+                theNumber = Math.floor(theNumber);
+                //alert(theNumber);
+                document.guessForm.userInput.focus();
+                document.guessForm.userInput.select();
+            }
+
+            function checkGuess()
+            {
+                var userGuess = eval(document.guessForm.userGuess.value);
+
+                if (theNumber === userGuess)
+                {
+                    alert("You Got It!!!");
+                    //changePicture();
+                    refreshID = setInterval("changePicture()", 700);
+                } else
+                {
+                    if (userGuess < theNumber)
+                    {
+                        //alert(name + " Your Guess is to Low! Try Again");
+                        document.guessForm.thePicture.src = "TooLow.jpg";
+
+                    } else
+                    {
+                        //alert(" Your Guess is to High! Try Again");
+                        document.guessForm.thePicture.src = "TooHigh.jpg";
+
+                    }
+                    document.guessForm.userInput.focus();
+                    document.guessForm.userInput.select();
+                }
+                document.guessForm.userInput.focus();
+                document.guessForm.userInput.select();
+            }
+            function changePicture()
+            {
+                if (thePictureNumber === 1)
+                    document.guessForm.thePicture.src = "fallOut1.png";
+                if (thePictureNumber === 2)
+                    document.guessForm.thePicture.src = "fallOut2.jpg";
+                if (thePictureNumber === 3)
+                    document.guessForm.thePicture.src = "fallOut3.jpg";
+                if (thePictureNumber === 4)
+                    document.guessForm.thePicture.src = "fallOut4.jpg";
+                thePictureNumber++;
+                if (thePictureNumber > 4)
+                    thePictureNumber = 1;
+                //thePictureNumber = thePictureNumber + 1;
+            }
+            function stopInterval()
+            {
+                clearInterval(refreshID);
+                initialize();
+                Documnet.guessForm.userGuess.focus();
+                Documnet.guessForm.userGuess.select();
+            }
+
+
+        </script>
+    </head>
+
+    <body onload="initialize()">
+        <h1>Guessing Game</h1>
+        <form name="guessForm" action="javaScript:checkGuess()">
+            Your Guess: <input type="text" name="userGuess" value="50" size="10" maxlength="2" required>
+            <br><br>
+            <img src="fallOut3.jpg" name="thePicture">
+            <br><br>
+
+            <input type="button" value="Take a Guess?" onclick="checkGuess()">
+            <input type="reset" value="Play Again?" onClick="stopInterval()">
+            <br><br>
+            <input type="button" value="exit" onsubmit="exit()">
+
+        </form>
+    </body>
+</html>

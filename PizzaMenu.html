@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>Tanners Pizza</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                text-align: center;
+            }
+            table{
+                margin-left: auto;
+                margin-right: auto;
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Tanners Pizza</h1>
+        <form name="PizzaForm" action="MAILTO:tvanamen@yahoo.com" method="post" enctype="text/plain">
+            First Name:<input type="text" name="First Name"max length="20">
+            <br>
+            Last Name:<input type="text" name="Last Name" max lenght="20">
+            <br>
+            Phone Number:<input type="text" name="Phone" value="(  )   -" size="15">
+            <br><br>
+            <b>SIZE</b>
+            <br>
+            <input type="radio" name="size" value="small">Small<br>
+            <input type="radio" name="size" value="regular" checked>Regular<br>
+            <input type="radio" name="size" value="large">Large<br>
+            <input type="radio" name="size" value="super">Super<br>
+            <br><br>
+            <b>TOPPINGS</b>
+            <br>
+            <table>
+                <tr>
+                <td><input type="checkbox" name="toppings" value="pepp">Pepperoni</td>
+                <td><input type="checkbox" name="toppings" value="sausage">Sausage</td>
+                <td><input type="checkbox" name="toppings" value="bacon">Bacon</td>
+                </tr>
+
+                <tr>
+                <td><input type="checkbox" name="toppings" value="green onions">Green Onions</td>
+                <td><input type="checkbox" name="toppings" value="extra cheese">Extra Cheese</td>
+                <td><input type="checkbox" name="toppings" value="Pineapple">Pineapple</td>
+                </tr>
+
+                <tr>
+                <td><input type="checkbox" name="toppings" value="green peppers">Green Peppers</td>
+                <td><input type="checkbox" name="toppings" value="anchovies">Anchovies</td>
+                <td><input type="checkbox" name="toppings" value="ham">Ham</td>
+                </tr>
+
+                <tr>
+                <td><input type="checkbox" name="toppings" value="mushrooms">Mushrooms</td>
+                <td><input type="checkbox" name="toppings" value="tomatos">Tomatos</td>
+                <td><input type="checkbox" name="toppings" value="onions">Onions</td>
+                </tr>
+            </table>
+            <br><br>
+            <b>CRUST</b>
+            <br>
+            <select name="crust">
+                <option value="thin">Thin</option>
+                <option value="regular">Regular</option>
+                <option value="thick">Thick</option>
+                <option value="stuffed">Stuffed</option>
+            </select>
+            <br><br>
+            <b>COMMENTS</b>
+            <br>
+            <textarea rows="4" cols="50" value="custumer comments">Enter Comments</textarea>
+            <br><br><br>
+            <input type="submit" value="submit">
+
+
+
+        </form>
+    </body>
+</html>
